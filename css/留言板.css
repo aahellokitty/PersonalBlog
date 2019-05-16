@@ -1,0 +1,57 @@
+.guestbook-content{
+    width:860px;
+    height:720px;
+    float:left;
+    background-color:white;
+}
+.comment-content-box{
+    width:820px;
+    height:670px;
+    margin:20px 30px 30px 10px;
+}
+.liuyan{
+    width:820px;
+    height:152px;
+}
+.liuyan>img{
+    width:60px;
+    height:64px;
+    float: left;
+}
+.liuyantext{
+    width:750px;
+    height:152px;
+    float: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.textarea{
+    width:97%;
+    margin: 10px 10px 0;
+    height:95px;
+    font-size: 14px;
+    color: #333;
+    border:none;
+    padding-left: 0;
+    outline: none;
+}
+.options-box{
+    width:750px;
+    height:36px;
+    line-height: 36px;
+    border-top:1px solid #ccc;
+}
+.comment-box{
+    margin:0 15px;
+    float:left;
+    cursor: pointer;
+}
+.comment-img{
+    float:left;
+    cursor: pointer;
+}
+.btn-box{
+    float:right;
+    margin-right:20px;
+    cursor: pointer;
+}

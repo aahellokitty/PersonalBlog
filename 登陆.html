@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/登陆.css">
+    <link rel="stylesheet" href="./css/首页.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+<body>
+    <div class="dialog-body">
+        <div class="login-wrap-box">
+            <div class="title">
+                <span>登陆个人博客</span>
+                <a href="首页.html" class="return"><i class="iconfont">&#xf00b3;</i></a>
+            </div>
+            <div class="content-box">
+                <div class="form-box">
+                    <div class="username-box">
+                        <span>* 账号</span>
+                        <i class="iconfont">&#xf0138;</i>
+                        <input type="text" placeholder="请输入账号" class="username" id="usernum">
+                    </div>
+                    <div class="password-box">
+                        <span>* 密码</span>
+                        <i class="iconfont">&#xf00c9;</i>
+                        <input type="text" placeholder="请输入密码" class="username" id="userpwd">
+                    </div>
+                </div>
+                <button class="request-btn">
+                    登录
+                </button>
+                <div class="infofix">
+                    <p class="infofix-left">
+                        <span>没有账号？</span>
+                        <span><a href="注册.html">注册</a></span>
+                    </p>
+                    <p class="infofix-right">没有密码</p>
+                </div>
+                <p class="other-login">
+                    第三方账号登录
+                </p>
+                <div class="i-list">
+                    <div class="i-list1"><i class="iconfont">&#xf01c7;</i></div>
+                    <div class="i-list2"><i class="iconfont">&#xf01af;</i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+    $(".request-btn").click(function(){
+        var usernum=$("#usernum").val();
+        var userpwd=$("#userpwd").val();
+        $.ajax({
+            method:"post",
+            url:"http://localhost:80/userLogin.php",
+            data:{num:usernum,pwd:userpwd},
+            dataType:"json",
+            success: function (res) {
+                /*console.log(res);*/
+                if(res[0].count>0)
+                {
+                    alert("登陆成功！");
+                }
+                else{
+                    alert("请注册账号！");
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/登陆.css">
+    <link rel="stylesheet" href="./css/首页.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+<body>
+<div class="dialog-body">
+    <div class="login-wrap-box">
+        <div class="title">
+            <span>注册个人博客</span>
+            <a href="首页.html" class="return"><i class="iconfont">&#xf00b3;</i></a>
+        </div>
+        <div class="content-box">
+            <div class="form-box">
+                <div class="username-box">
+                    <span>* 账号</span>
+                    <i class="iconfont">&#xf0138;</i>
+                    <input type="text" placeholder="请输入账号" class="username" id="num">
+                </div>
+                <div class="password-box">
+                    <span>* 密码</span>
+                    <i class="iconfont">&#xf00c9;</i>
+                    <input type="text" placeholder="请输入密码" class="username" id="pwd">
+                </div>
+
+            </div>
+            <button class="request-btn">
+                注册
+            </button>
+            <div class="infofix">
+                <p class="infofix-left">
+                    <span>已经拥有账号？</span>
+                    <span><a href="登陆.html">登录</a></span>
+                </p>
+                <p class="infofix-right">没有密码</p>
+            </div>
+            <p class="other-login">
+                快捷注册
+            </p>
+            <div class="i-list">
+                <div class="i-list1"><i class="iconfont">&#xf01c7;</i></div>
+                <div class="i-list2"><i class="iconfont">&#xf01af;</i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+    $(".request-btn").click(function(){
+        var num=$("#num").val();
+        var pwd=$("#pwd").val();
+        $.ajax({
+            method:"post",
+            url:"http://localhost:80/regestInfo.php",
+            data:{number:num,pwd:pwd},
+            success:function(res){
+                console.log(res);
+                if(res=="success"){
+                    alert("注册成功");
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

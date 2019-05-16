@@ -1,0 +1,140 @@
+.dialog-body{
+    width: 400px;
+    height:420px;
+    border:1px solid silver;
+    margin:50px auto 0;
+    background-color:white;
+    font-size: 14px;
+    color: #333;
+}
+.login-wrap-box{
+    margin:5px 20px;
+}
+.title{
+    width:360px;
+    height:45px;
+    line-height: 45px;
+    font-size:16px;
+    border-bottom: 1px solid silver;
+}
+.title>span{
+    margin-left: 20px;
+    font-weight: 600;
+}
+.return{
+    float: right;
+    cursor: pointer;
+}
+.form-box{
+    width:336px;
+    height: 136px;
+    margin:20px auto;
+}
+.username-box{
+    width:336px;
+    height:58px;
+    margin-bottom:20px;
+    position:relative;
+}
+.password-box{
+    width:336px;
+    height:58px;
+    position:relative;
+}
+.username{
+    padding-left:30px;
+    margin-top:5px;
+    width:300px;
+    height:35px;
+    outline: 0;
+    border: 1px solid #dcdee2;
+    border-radius: 4px;
+}
+.username-box>i{
+    position:absolute;
+    top:32px;
+    left:10px;
+    font-size:18px;
+}
+.password{
+    padding-left:30px;
+    margin-top:5px;
+    width:300px;
+    height:35px;
+    outline: 0;
+    border: 1px solid #dcdee2;
+    border-radius: 4px;
+}
+.password-box>i{
+    position:absolute;
+    top:32px;
+    left:10px;
+    font-size:18px;
+}
+.request-btn{
+    width:336px;
+    height:36px;
+    margin-left:10px;
+    background-color:#19be6b;
+    border-radius: 4px;
+    line-height:36px;
+    text-align:center;
+    color:white;
+    outline: none;
+    border:none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.infofix{
+    width:336px;
+    height:18px;
+    margin:0 auto;
+}
+.infofix-left{
+    float:left;
+}
+.infofix-left>span:nth-child(2) a{
+    color: #2a8bec !important;
+    text-decoration: none;
+}
+.infofix-right{
+    float:right;
+    color: #2a8bec;
+    cursor: pointer;
+}
+.other-login{
+    width:336px;
+    height:18px;
+    margin:0 auto;
+    margin-top:15px;
+    margin-bottom: 10px;
+}
+.i-list{
+    width:336px;
+    height:40px;
+    margin:30px auto 0;
+    text-align:center;
+    line-height: 40px;
+}
+.i-list1,.i-list2{
+    width:37px;
+    height:37px;
+    float:left;
+    text-align:center;
+    line-height:40px;
+    color:white;
+    cursor: pointer;
+}
+.i-list1{
+    background-color:#1a98fc;
+    border-radius: 50%;
+    margin:0 20px 0 115px;
+}
+.i-list2{
+    background-color:#e93847;;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.i-list1>i,.i-list2>i{
+    font-size:20px !important;
+}

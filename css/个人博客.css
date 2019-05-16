@@ -1,0 +1,48 @@
+.myblock{
+    height:600px;
+    width:800px;
+    border:1px solid #d7d7d7;
+    border-radius: 5px;
+    margin:20px 20px;
+    position:relative;
+}
+.mycontent{
+    list-style: none;
+    margin-left:30px;
+    margin-top:20px;
+}
+.tit,.cont,.side{
+    font-size:17px;
+}
+.t-title,.t-content,{
+    margin-top:10px;
+}
+.my_side{
+    margin-bottom:5px;
+}
+#sel{
+    outline:none;
+}
+.t-title{
+    width:400px;
+    height:30px;
+    outline:none;
+}
+.t-content{
+    width:740px;
+    height:380px;
+    outline:none;
+}
+.mybtn{
+    position:absolute;
+    bottom:45px;
+    right:30px;
+}
+.btn{
+    width:100px;
+    height:30px;
+    border-style: none;
+    border-radius: 5px;
+    outline:none;
+    cursor: pointer;
+}

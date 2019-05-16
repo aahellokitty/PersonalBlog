@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/首页.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/关于我.css">
+    <link rel="stylesheet" href="./css/个人博客.css">
+</head>
+<body>
+<div class="header">
+    <div class="head">
+        <img src="./img/tian.png" class="logo">
+        <ul class="nav_list">
+            <li style="margin-left:120px;"><a href="首页.html" style="color:#333;">首页</a></li>
+            <li><a href="个人博客.html" style="color:#ef4868;">个人博客</a></li>
+            <li><a href="关于我.html">关于我</a></li>
+            <li><a href="留言板.html">留言板</a></li>
+        </ul>
+        <div class="login-box">
+            <span><a href="登陆.html">登陆</a></span>
+            /
+            <span><a href="注册.html">注册</a></span>
+        </div>
+    </div>
+</div>
+<div class="content-wrap-box">
+    <div class="nav_me">
+        <i class="iconfont">&#xf014a;</i>
+        <span><a href="首页.html" class="firstpage">首页</a></span>
+        >
+        <span>个人博客</span>
+    </div>
+    <div class="about-wrap-box">
+        <div class="about-content">
+            <div class="myblock">
+                <div class="mycontent">
+                    <div class="my_side">
+                        <span class="side">类别：</span>
+                        <select id="sel">
+                            <option>—请选择—</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span class="tit">标题：</span><br/>
+                        <input type="text" class="t-title"/>
+                    </div>
+                    <div>
+                        <span class="cont">内容：</span><br/>
+                        <textarea class="t-content"></textarea>
+                    </div>
+                </div>
+                <div class="mybtn"><button class="btn">发表</button></div>
+            </div>
+        </div>
+        <div class="content-side">
+            <div class="search-box">
+                <input type="text" value="请输入你需要的内容" class="search-value" onfocus="value=''" onblur="value='请输入你需要的内容'">
+                <i class="iconfont">&#xf012c;</i>
+            </div>
+            <ul class="clearfix">
+                <li><a href="个人博客.html">个人博客</a></li>
+                <li><a href="html5.html">HTML5</a></li>
+                <li><a href="css3.html">CSS3</a></li>
+                <li><a href="javascript.html">JavaScript</a></li>
+            </ul>
+            <div class="establish-blog">
+                <p class="e_title">你也想建立一个独立博客？</p>
+                <p class="e_centertext">你是否也想打造一个在互联网上的个人品牌，成为一个家喻户晓的人物呢？</p>
+                <p class="e_lasttext">请点击了解
+                    <span>怎样创建个人博客</span>
+                </p>
+            </div>
+            <div class="pensonal-msg">
+                <p class="title-h2">个人信息</p>
+                <ul class="msg-list">
+                    <li>姓名：田燕兰</li>
+                    <li>QQ：1938590879</li>
+                    <li>职业：前端工程师</li>
+                    <li>爱好：听歌、看电影</li>
+                    <li>喜欢的歌手：邓紫棋</li>
+                    <li>喜欢的电影：喜剧类</li>
+                    <li>喜欢的音乐：流行音乐</li>
+                    <li>人生格言：只要有信心，人永远不会挫败</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-wrap-box">
+    <span>Design by：田燕兰</span>
+</div>
+<script src="./jquery/jquery-3.3.1.min.js"></script>
+<script>
+        $.ajax({
+            method:"post",
+            url:"http://localhost:80/selectType.php",
+            dataType:"json",
+            success:function(res) {
+                console.log(res);
+                for (var i = 0; i < res.length; i++) {
+                    var op = $("<option></option>");
+                    op.html(res[i].type);
+                    op.val(res[i].id);
+                    $("#sel").append(op);
+                }
+            }
+        })
+        $(".btn").click(function(){
+            var type=$("#sel").val();
+            var title=$(".t-title").val();
+            var content=$(".t-content").val();
+            var time=new Date().toLocaleString();
+            $.ajax({
+                method:"post",
+                url:"http://localhost:80/sendblog.php",
+                data:{title:title,time:time,content:content,type:type},
+                success:function(res){
+                    console.log(res);
+                }
+            })
+        })
+</script>
+</body>
+</html>
